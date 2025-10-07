@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingresa un número: ");
+        int num = int.Parse(Console.ReadLine());
+        Console.WriteLine("El factorial de " + num + " es: " + Factorial(num));
+    }
+
+    static int Factorial(int n)
+    {
+        int f = 1;
+        for (int i = 1; i <= n; i++)
+            f *= i;
+        return f;
+    }
+}
