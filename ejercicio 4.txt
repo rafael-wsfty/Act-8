@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingresa el primer número: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Ingresa el segundo número: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.Write("Ingresa el tercer número: ");
+        int c = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Mayor: " + Mayor(a, b, c));
+        Console.WriteLine("Menor: " + Menor(a, b, c));
+        Console.WriteLine("Intermedio: " + Intermedio(a, b, c));
+    }
+
+    static int Mayor(int x, int y, int z)
+    {
+        return Math.Max(x, Math.Max(y, z));
+    }
+
+    static int Menor(int x, int y, int z)
+    {
+        return Math.Min(x, Math.Min(y, z));
+    }
+
+    static int Intermedio(int x, int y, int z)
+    {
+        int mayor = Mayor(x, y, z);
+        int menor = Menor(x, y, z);
+        if (x != mayor && x != menor) return x;
+        if (y != mayor && y != menor) return y;
+        return z;
+    }
+}
