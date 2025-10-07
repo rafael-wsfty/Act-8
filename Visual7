@@ -1,0 +1,69 @@
+////////// Program.cs //////////////
+
+
+using Practica7;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Operaciones op = new Operaciones();
+
+            int a = 10;
+            int b = 10;
+
+            Console.WriteLine("DEMOSTRACIÓN DE PARÁMETROS POR VALOR Y REFERENCIA\n");
+
+            Console.WriteLine("Valor inicial de a = " + a);
+            op.IncrementoPorValor(a);  
+            Console.WriteLine("Después de IncrementoPorValor, a = " + a);
+            Console.WriteLine();
+
+            Console.WriteLine("Valor inicial de b = " + b);
+            op.IncrementoPorReferencia(ref b);  
+            Console.WriteLine("Después de IncrementoPorReferencia, b = " + b);
+            Console.WriteLine();
+
+            Console.WriteLine("Presione una tecla para salir......");
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+
+///////////// Operaciones.cs ////////////////
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica7
+{
+    internal class Operaciones
+    {   
+        public void IncrementoPorValor(int n1)
+        {
+            n1 = n1 + 10;
+            Console.WriteLine("Dentro de IncrementoPorValor, n1 vale: " + n1);
+        }
+
+        public void IncrementoPorReferencia(ref int n1)
+        {
+            n1 = n1 + 10;
+            Console.WriteLine("Dentro de IncrementoPorReferencia, n1 vale: " + n1);
+        }
+    }
+}
