@@ -1,0 +1,21 @@
+using System;
+
+class Programa
+{
+    static double Potencia(double num, int exp)
+    {
+        double r = 1;
+        for (int i = 1; i <= exp; i++)
+            r *= num;
+        return r;
+    }
+
+    static void Main()
+    {
+        Console.Write("Número: ");
+        double n = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Exponente: ");
+        int e = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Resultado: " + Potencia(n, e));
+    }
+}
